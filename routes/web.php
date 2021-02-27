@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $nom="katoro";
-    return view('welcome')->with('nom',$nom);
+    $nom="daniel";
+    $lastname="katoro";
+    return view('welcome')->with(['nom'=> $nom,
+    'lastname' => $lastname]);
 });
 
 Route::get('/about', function(){
