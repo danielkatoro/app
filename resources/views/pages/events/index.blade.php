@@ -25,6 +25,13 @@
         <?php 
             dump($events);
         ?>
+        <ul>
+            <?php foreach($events as $event): ?>
+                <li>
+                    <?= $event; ?>
+                </li>
+            <?php endforeach ?>
+        </ul>
 
     </body>
 </html>

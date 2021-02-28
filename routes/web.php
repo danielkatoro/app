@@ -36,7 +36,7 @@ Route::get('/event', function (){
         'PHP conference',
         'Meet up tdn',
         'Laravel conference'
-    ]
+    ];
 
     return view('pages.events.index',compact('events'));
 });
