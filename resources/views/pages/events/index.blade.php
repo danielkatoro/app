@@ -21,7 +21,10 @@
         </style>
     </head>
     <body class="antialiased">
-        <h2>Event</h2>
+        <h2>Events</h2>
+        <?php 
+            dump($events);
+        ?>
 
     </body>
 </html>

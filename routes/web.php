@@ -31,5 +31,12 @@ Route::get('/help', function(){
 });
 
 Route::get('/event', function (){
-    return view('pages.events');
+    $events=[
+        'Make php great again',
+        'PHP conference',
+        'Meet up tdn',
+        'Laravel conference'
+    ]
+
+    return view('pages.events.index',compact('events'));
 });
