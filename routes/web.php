@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $nom="daniel";
-    return view('welcome')->with($nom);
+    $name='daniel';
+    $isweekend= date('N') >=6;
+
+    $isnotweekend =date('N') <6;
+    return view('welcome',compact('name','isweekend'));
 });
 
 Route::get('/about', function(){

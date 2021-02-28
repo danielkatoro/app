@@ -21,7 +21,18 @@
         </style>
     </head>
     <body class="antialiased">
-            {{$nom}}
+            {{$name}}
+            <?php if($isweekend) : ?>
+                <?= "va t'amuser"; ?>
+            <?php else : ?>
+                <?= "Mon gar va travailler"; ?>
+            <?php endif ?>
+
+            @if($isweekend)
+            {{"va t'amuser"}}
+            @else
+            {{"va travailler"}}
+            @endif
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
