@@ -31,5 +31,5 @@ Route::get('/help', function(){
 });
 
 Route::get('/event', function (){
-    return view('pages.event');
+    return view('pages.events');
 });
