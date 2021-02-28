@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        about
+        <h2>About</h2>
         
         <?php 
             echo $name;

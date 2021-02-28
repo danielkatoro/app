@@ -21,6 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-        <h2>help</h2>
+        <h2>Help</h2>
     </body>
 </html>
