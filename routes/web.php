@@ -29,3 +29,7 @@ Route::get('/about', function(){
 Route::get('/help', function(){
     return view('pages.help');
 });
+
+Route::get('/event', function (){
+    return view('pages.event');
+});
