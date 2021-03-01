@@ -1,9 +1,7 @@
 @extends('layouts.master',['title'=>'Events'])
 
+@section('content')
         <h2>Events</h2>
-        <?php 
-            dump($events);
-        ?>
         <ul>
             <?php foreach($events as $event): ?>
                 <li>
@@ -14,3 +12,4 @@
 
     </body>
 </html>
+@endsection('content')
