@@ -1,5 +1,6 @@
 @extends('layouts.master')
             
+@section('content')
     {{$name}}
     <?php if($isweekend) : ?>
         <?= "va t'amuser"; ?>
@@ -12,3 +13,4 @@
         @else
             {{"va travailler"}}
         @endif
+@endsection
