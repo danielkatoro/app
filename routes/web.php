@@ -17,7 +17,6 @@ Route::get('/', function () {
     $name='daniel';
     $isweekend= date('N') >=6;
 
-    $isnotweekend =date('N') <6;
     return view('welcome',compact('name','isweekend'));
 });
 
