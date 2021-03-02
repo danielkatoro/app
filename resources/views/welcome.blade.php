@@ -1,7 +1,7 @@
 @extends('layouts.master', ['title' => 'Home'])
             
 @section('content')
-    {{$name}}yy
+    {{$name}}
     <?php if($isweekend) : ?>
         <?= "va t'amuser"; ?>
     <?php else : ?>
