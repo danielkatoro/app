@@ -8,10 +8,10 @@
     <?php else : ?>
         <?= "Mon gar va travailler"; ?>
     <?php endif ?>
-
-        @if($isweekend)
+        @if($date->isweekend())
+        <!-- @if($isweekend)
             {{"va t'amuser"}}
         @else
             {{"va travailler"}}
-        @endif
+        @endif -->
 @endsection
