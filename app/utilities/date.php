@@ -6,8 +6,6 @@
     {
         public function isweekend()
         {
-            return date('N') >=6; 
+            return date('N') >= 6;
         }
     }
-
-?>

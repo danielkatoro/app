@@ -1,5 +1,5 @@
+
 @extends('layouts.master', ['title' => 'Home'])
-@inject('app\utilities\date')
 
 @section('content')
     {{$name}}
@@ -8,10 +8,10 @@
     <?php else : ?>
         <?= "Mon gar va travailler"; ?>
     <?php endif ?>
-        @if($date->isweekend())
-        <!-- @if($isweekend)
+
+        @if($isweekend)
             {{"va t'amuser"}}
         @else
             {{"va travailler"}}
-        @endif -->
+        @endif
 @endsection
