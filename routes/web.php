@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $name='daniel';
     $isweekend= date('N') >=6;
-    DB::select('SELECT * FROM post');
+    dump(DB::select('SELECT * FROM post'));
 
     return view('welcome',compact('name','isweekend'));
 });
