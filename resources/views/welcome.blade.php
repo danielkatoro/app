@@ -9,9 +9,5 @@
         <?= "Mon gar va travailler"; ?>
     <?php endif ?>
 
-        @if($isweekend)
-            {{"va t'amuser"}}
-        @else
-            {{"va travailler"}}
-        @endif
+        
 @endsection
