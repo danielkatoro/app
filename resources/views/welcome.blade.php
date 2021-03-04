@@ -9,5 +9,5 @@
         <?= "Mon gar va travailler"; ?>
     <?php endif ?>
 
-        
+        @include('partials._weekend')
 @endsection
