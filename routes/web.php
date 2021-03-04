@@ -19,10 +19,12 @@ Route::get('/', function () {
     $title='super titre';
     $contenu='super conenu';
     dump(DB::select('SELECT * FROM post LIMIT 1'));
-    DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
-        'title'=> $title,
-        'contenu'=>$contenu
-    ]);
+    $post=(DB::table('post')->get('body'));
+    // dd($post->title);
+    // DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
+    //     'title'=> $title,
+    //     'contenu'=>$contenu
+    // ]);
 
     return view('welcome',compact('name','isweekend'));
 });
