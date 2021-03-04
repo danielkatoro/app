@@ -16,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $name='daniel';
     $isweekend= date('N') >=6;
-    dump(DB::select('SELECT * FROM post'));
+    $title='super titre';
+    $contenu='super conenu';
+    dump(DB::select('SELECT * FROM post LIMIT 1'));
+    DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
+        'title'=> $title,
+        'contenu'=>$contenu
+    ]);
 
     return view('welcome',compact('name','isweekend'));
 });
