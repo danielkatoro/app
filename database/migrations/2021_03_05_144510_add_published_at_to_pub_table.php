@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePubTable extends Migration
+class AddPublishedAtToPubTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreatePubTable extends Migration
      */
     public function up()
     {
-        Schema::create('pub', function (Blueprint $table) {
-            $table->increments('Id');
-            $table->string('Titre');
-            $table->text('contenu');
-            $table->boolean('published')->default(false);
-            $table->timestamps();
-
+        Schema::table('pub', function (Blueprint $table) {
+            $table->dateTime('published_at')->after('published')->nullable();
         });
     }
 
@@ -30,6 +25,8 @@ class CreatePubTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pub');
+        Schema::table('pub', function (Blueprint $table) {
+            $table->dropColumn('published_at');
+        });
     }
 }
