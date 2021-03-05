@@ -12,19 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use app\models\post;
 Route::get('/', function () {
     $name='daniel';
     $isweekend= date('N') >=6;
     $title='super titre';
     $contenu='super conenu';
-    dump(DB::select('SELECT * FROM post LIMIT 3'));
+    // dump(DB::select('SELECT * FROM post LIMIT 3'));
 
-    DB::table('post')->whereId(4)
-                    ->update([
-                        'title'=>'Magnifiaue titre 1',
-                        'body'=>'Magnifique contenu1'
-                    ]);
+    // dd(app\post::find(1));
+
+    // DB::table('post')->whereId(4)
+    //                 ->update([
+    //                     'title'=>'Magnifiaue titre 1',
+    //                     'body'=>'Magnifique contenu1'
+    //                 ]);
 
     // DB::table('post')->whereId(4)->delete(); 
 
