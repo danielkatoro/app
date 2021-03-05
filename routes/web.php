@@ -18,13 +18,20 @@ Route::get('/', function () {
     $isweekend= date('N') >=6;
     $title='super titre';
     $contenu='super conenu';
-    dump(DB::select('SELECT * FROM post LIMIT 1'));
-    $post=(DB::table('post')->get('body'));
+    dump(DB::select('SELECT * FROM post LIMIT 3'));
 
-    DB::table('post')->insert([
-        'title'=> 'Magnifique titre',
-        'body'=> 'Magnifique body'
-    ]);
+    DB::table('post')->whereId(4)
+                    ->update([
+                        'title'=>'Magnifiaue titre 1',
+                        'body'=>'Magnifique contenu1'
+                    ]);
+
+    // $post=(DB::table('post')->get('body'));
+
+    // DB::table('post')->insert([
+    //     'title'=> 'Magnifique titre',
+    //     'body'=> 'Magnifique body'
+    // ]);
     // dd($post->title);
     // DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
     //     'title'=> $title,
