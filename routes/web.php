@@ -20,6 +20,11 @@ Route::get('/', function () {
     $contenu='super conenu';
     dump(DB::select('SELECT * FROM post LIMIT 1'));
     $post=(DB::table('post')->get('body'));
+
+    DB::table('post')->insert([
+        'title'=> 'Magnifique titre',
+        'body'=> 'Magnifique body'
+    ]);
     // dd($post->title);
     // DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
     //     'title'=> $title,
