@@ -19,6 +19,7 @@ Route::get('/', function () {
     $title='super titre';
     $contenu='super conenu';
     // dump(DB::select('SELECT * FROM post LIMIT 3'));
+    // DB::statement('drop table post'); faire des injections dans la base de donnees
 
     // dd(app\post::find(1));
 
