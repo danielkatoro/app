@@ -26,6 +26,8 @@ Route::get('/', function () {
                         'body'=>'Magnifique contenu1'
                     ]);
 
+    DB::table('post')->whereId(4)->delete(); 
+
     // $post=(DB::table('post')->get('body'));
 
     // DB::table('post')->insert([
