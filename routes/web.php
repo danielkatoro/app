@@ -12,36 +12,36 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use app\models\post;
+use app\models\pub;
 Route::get('/', function () {
     $name='daniel';
     $isweekend= date('N') >=6;
     $title='super titre';
     $contenu='super conenu';
-    // dump(DB::select('SELECT * FROM post LIMIT 3'));
-    // DB::statement('DROP TABLE post');
+    dump(DB::select('SELECT * FROM post LIMIT 3'));
+    DB::statement('DROP TABLE post');
 
-    // dd(app\post::find(1));
+    dd(app\post::find(1));
 
-    // DB::table('post')->whereId(4)
-    //                 ->update([
-    //                     'title'=>'Magnifiaue titre 1',
-    //                     'body'=>'Magnifique contenu1'
-    //                 ]);
+    DB::table('post')->whereId(4)
+                    ->update([
+                        'title'=>'Magnifiaue titre 1',
+                        'body'=>'Magnifique contenu1'
+                    ]);
 
-    // DB::table('post')->whereId(4)->delete(); 
+    DB::table('pubb')->whereId(4)->delete(); 
 
-    // $post=(DB::table('post')->get('body'));
+    $post=(DB::table('post')->get('body'));
 
-    // DB::table('post')->insert([
-    //     'title'=> 'Magnifique titre',
-    //     'body'=> 'Magnifique body'
-    // ]);
-    // dd($post->title);
-    // DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
-    //     'title'=> $title,
-    //     'contenu'=>$contenu
-    // ]);
+    DB::table('post')->insert([
+        'title'=> 'Magnifique titre',
+        'body'=> 'Magnifique body'
+    ]);
+    dd($post->title);
+    DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
+        'title'=> $title,
+        'contenu'=>$contenu
+    ]);
 
     return view('welcome',compact('name','isweekend'));
 });
