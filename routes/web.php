@@ -18,12 +18,12 @@ Route::get('/', function () {
     $isweekend= date('N') >=6;
     $title='super titre';
     $contenu='super conenu';
-    dump(DB::select('SELECT * FROM post LIMIT 3'));
-    DB::statement('DROP TABLE post');
+    dump(DB::select('SELECT * FROM pub LIMIT 3'));
+    // DB::statement('DROP TABLE pub');
 
-    dd(app\post::find(1));
+    dd(app\pub::find(1));
 
-    DB::table('post')->whereId(4)
+    DB::table('pub')->whereId(4)
                     ->update([
                         'title'=>'Magnifiaue titre 1',
                         'body'=>'Magnifique contenu1'
@@ -31,14 +31,14 @@ Route::get('/', function () {
 
     DB::table('pubb')->whereId(4)->delete(); 
 
-    $post=(DB::table('post')->get('body'));
+    $pub=(DB::table('pub')->get('body'));
 
-    DB::table('post')->insert([
+    DB::table('pub')->insert([
         'title'=> 'Magnifique titre',
         'body'=> 'Magnifique body'
     ]);
-    dd($post->title);
-    DB::insert('INSERT INTO post (title,body) VALUES (:title, :contenu)',[
+    dd($pub->title);
+    DB::insert('INSERT INTO pub (title,body) VALUES (:title, :contenu)',[
         'title'=> $title,
         'contenu'=>$contenu
     ]);
