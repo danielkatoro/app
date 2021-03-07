@@ -21,27 +21,27 @@ Route::get('/', function () {
     dump(DB::select('SELECT * FROM pub LIMIT 3'));
     // DB::statement('DROP TABLE pub');
 
-    dd(app\pub::find(1));
+    // dd(app\pub::find(1));
 
-    DB::table('pub')->whereId(4)
-                    ->update([
-                        'title'=>'Magnifiaue titre 1',
-                        'body'=>'Magnifique contenu1'
-                    ]);
+    // DB::table('pub')->whereId(4)
+    //                 ->update([
+    //                     'title'=>'Magnifiaue titre 1',
+    //                     'body'=>'Magnifique contenu1'
+    //                 ]);
 
-    DB::table('pubb')->whereId(4)->delete(); 
+    // DB::table('pub')->whereId(4)->delete(); 
 
-    $pub=(DB::table('pub')->get('body'));
+    // $pub=(DB::table('pub')->get('body'));
 
     DB::table('pub')->insert([
-        'title'=> 'Magnifique titre',
-        'body'=> 'Magnifique body'
+        'titre'=> 'Magnifique titre',
+        'contenu'=> 'Magnifique body'
     ]);
-    dd($pub->title);
-    DB::insert('INSERT INTO pub (title,body) VALUES (:title, :contenu)',[
-        'title'=> $title,
-        'contenu'=>$contenu
-    ]);
+    // dd($pub->title);
+    // DB::insert('INSERT INTO pub (title,body) VALUES (:title, :contenu)',[
+    //     'title'=> $title,
+    //     'contenu'=>$contenu
+    // ]);
 
     return view('welcome',compact('name','isweekend'));
 });
