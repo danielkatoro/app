@@ -13,10 +13,12 @@ class AddPublishedAtToPubTable extends Migration
      */
     public function up()
     {
+        
         Schema::table('pub', function (Blueprint $table) {
+            $pub_at=new DateTime('+5 days');
             $table->dateTime('published_at')->after('published')
                                             ->nullable()
-                                            ->default(DB::raw('CURRENT_TIMESTAMP')+2);
+                                            ->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

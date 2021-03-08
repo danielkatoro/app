@@ -33,10 +33,11 @@ Route::get('/', function () {
 
     // $pub=(DB::table('pub')->get('body'));
 
-    // DB::table('pub')->insert([
-    //     'titre'=> 'Magnifique titre',
-    //     'contenu'=> 'Magnifique body'
-    // ]);
+    DB::table('pub')->insert([
+        'titre'=> 'Autre titre',
+        'contenu'=> 'autre contenu',
+        'published_at' => new DateTime('+15 hours')
+    ]);
     // dd($pub->title);
     // DB::insert('INSERT INTO pub (title,body) VALUES (:title, :contenu)',[
     //     'title'=> $title,
