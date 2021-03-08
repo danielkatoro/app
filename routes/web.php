@@ -18,7 +18,7 @@ Route::get('/', function () {
     $isweekend= date('N') >=6;
     $title='super titre';
     $contenu='super conenu';
-    dump(DB::select('SELECT * FROM pub LIMIT 3'));
+    // dump(DB::select('SELECT * FROM pub LIMIT 3'));
     // DB::statement('DROP TABLE pub');
 
     // dd(app\pub::find(1));
@@ -33,10 +33,10 @@ Route::get('/', function () {
 
     // $pub=(DB::table('pub')->get('body'));
 
-    DB::table('pub')->insert([
-        'titre'=> 'Magnifique titre',
-        'contenu'=> 'Magnifique body'
-    ]);
+    // DB::table('pub')->insert([
+    //     'titre'=> 'Magnifique titre',
+    //     'contenu'=> 'Magnifique body'
+    // ]);
     // dd($pub->title);
     // DB::insert('INSERT INTO pub (title,body) VALUES (:title, :contenu)',[
     //     'title'=> $title,

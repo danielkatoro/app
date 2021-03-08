@@ -16,7 +16,7 @@ class AddPublishedAtToPubTable extends Migration
         Schema::table('pub', function (Blueprint $table) {
             $table->dateTime('published_at')->after('published')
                                             ->nullable()
-                                            ->default(DB::raw('CURRENT_TIMESTAMP'));
+                                            ->default(DB::raw('CURRENT_TIMESTAMP')+2);
         });
     }
 
